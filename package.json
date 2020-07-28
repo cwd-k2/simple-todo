@@ -6,7 +6,6 @@
     "build": "run-p build:*",
     "build:tsc": "tsc -p src/server",
     "build:webpack": "webpack --config src/client/webpack.config.js",
-    "build:sass": "node-sass src/styles -o app/styles",
     "build:views": "cp -r src/views app",
     "clean": "rimraf app/server app/styles app/views app/scripts",
     "start": "node app/server/index.js"
