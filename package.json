@@ -7,7 +7,7 @@
     "build:tsc": "tsc -p src/server",
     "build:webpack": "webpack --config src/client/webpack.config.js",
     "build:views": "cp -r src/views app",
-    "clean": "rimraf app/server app/styles app/views app/scripts",
+    "clean": "rimraf app/server app/views app/scripts",
     "start": "node app/server/index.js"
   },
   "author": "cwd-k2",
