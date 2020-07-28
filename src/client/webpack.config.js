@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode:    "development",
   devtool: "source-map",
 
   entry: path.join(__dirname, "index.tsx"),
@@ -28,6 +28,32 @@ module.exports = {
         test: /\.js$/,
         loader: "source-map-loader",
         exclude: /.*node_modules.*/
+      },
+
+      {
+        test: /\.scss/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              url: true,
+              sourceMap: false,
+              importLoaders: 2
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: false
+            }
+          }
+        ]
+      },
+
+      {
+        test: /\.(gif|png|jpg|ttf|svg)/,
+        loader: "url-loader"
       }
     ]
   },
