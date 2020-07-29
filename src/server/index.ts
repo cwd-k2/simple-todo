@@ -14,7 +14,6 @@ app.use(express.json());
 
 app.use("/", router);
 app.use("/scripts", express.static(path.join(__dirname, "../scripts")));
-app.use("/styles",  express.static(path.join(__dirname, "../styles")));
 app.use("/images",  express.static(path.join(__dirname, "../images")));
 
 app.use((req: express.Request, res: express.Response) => {
