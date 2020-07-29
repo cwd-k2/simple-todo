@@ -26,6 +26,11 @@ app.use(passport.session());
 
 app.use(helmet());
 
+app.use((req: express.Request, res: express.Response, next: Function) => {
+  console.log(`${req.method} at ${req.path}`);
+  next();
+});
+
 app.use("/", router);
 app.use("/scripts", express.static(path.join(__dirname, "../scripts")));
 app.use("/images",  express.static(path.join(__dirname, "../images")));
