@@ -1,4 +1,7 @@
 /node_modules
 /app/server
+/app/shared
 /app/scripts
 /app/views
+/config.json
+/test.js

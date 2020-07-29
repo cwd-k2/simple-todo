@@ -4,10 +4,12 @@ module.exports = {
   mode:    "development",
   devtool: "source-map",
 
-  entry: path.join(__dirname, "index.tsx"),
+  entry: {
+    index: path.join(__dirname, "index.tsx")
+  },
 
   output: {
-    filename: "index.js",
+    filename: "[name].js",
     path: path.join(__dirname, "../../app/scripts")
   },
 

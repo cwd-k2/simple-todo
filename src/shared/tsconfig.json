@@ -3,7 +3,7 @@
     "target": "ES2020",
     "module": "commonjs",
     "sourceMap": true,
-    "outDir": "../../app/server",
+    "outDir": "../../app/shared",
     "rootDir": ".",
     "removeComments": true,
     "strict": true,
@@ -12,12 +12,11 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "composite": true
   },
   "include": [
     "**/*.ts"
-  ],
-  "references": [
-    { "path": "../shared"}
   ]
 }
+
