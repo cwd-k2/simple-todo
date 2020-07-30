@@ -6,7 +6,11 @@ import passport from "passport";
 const router: express.Router = express.Router();
 
 router.get("/", (req: express.Request, res: express.Response) => {
-  res.render("index");
+  if (req.user) {
+    res.render("index");
+  } else {
+    res.redirect("/login");
+  }
 });
 
 router.post("/login", passport.authenticate("local", {
