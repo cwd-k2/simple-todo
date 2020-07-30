@@ -9,8 +9,7 @@ const strategy = new Strategy((
 ) => {
 
   pdb.one(
-    `select * from "Authenticate" where username = $1`,
-    username
+    `select * from "Authenticate" where username = '${username}'`,
   ).then((auth) => {
 
     bcrypt.compare(password, auth.password, (err, res) => {
