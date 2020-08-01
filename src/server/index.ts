@@ -10,7 +10,7 @@ import passport from "./auth"
 
 import config from "./utils/config";
 
-const app: express.Application = express();
+const app = express();
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "../views"));
@@ -26,18 +26,16 @@ app.use(passport.session());
 
 app.use(helmet());
 
-app.use((req: express.Request, res: express.Response, next: Function) => {
-  console.log(`${req.method} at ${req.path}`);
+app.use((req, res, next) => {
+  console.log(
+    `${req.method} at ${req.path} by ${req.user ? req.user : 'unknown'}`
+  );
   next();
 });
 
-app.use("/", router);
 app.use("/scripts", express.static(path.join(__dirname, "../scripts")));
 app.use("/images",  express.static(path.join(__dirname, "../images")));
-
-app.use((req: express.Request, res: express.Response) => {
-  res.status(404).render("404");
-});
+app.use("/", router);
 
 app.listen(config.port, () => {
   console.log(`server listening: ${config.port}`);

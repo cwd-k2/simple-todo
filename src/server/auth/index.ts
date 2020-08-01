@@ -5,7 +5,7 @@ import { Strategy } from "passport-local";
 import pdb  from "../db";
 
 const strategy = new Strategy((
-  username: String, password: String, done: Function
+  username, password, done
 ) => {
 
   pdb.one(
@@ -26,10 +26,13 @@ const strategy = new Strategy((
 passport.use(strategy);
 
 passport.serializeUser((user, done) => {
+  console.log("serializing");
   console.log(user);
   done(null, user);
 });
+
 passport.deserializeUser((user, done) => {
+  console.log("deserializing");
   console.log(user);
   done(null, user);
 });
