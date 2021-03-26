@@ -26,7 +26,7 @@ app.use(passport.session());
 
 app.use(helmet());
 
-app.use((req, res, next) => {
+app.use((req, _, next) => {
   console.log(
     `${req.method} at ${req.path} by ${req.user ? req.user : 'unknown'}`
   );
