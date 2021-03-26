@@ -1,6 +1,6 @@
 # Simple ToDo
 
-Express.js / React.js / TypeScript でシンプルな ToDo アプリ
+Express.js / React.js / TypeScript でシンプルな ToDo アプリ (未完成)
 
 ## To Run
 
